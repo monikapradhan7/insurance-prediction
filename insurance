@@ -1,0 +1,22 @@
+Transformation Pipeline and Model Successfully Saved
+(Pipeline(memory=FastMemory(location=/tmp/joblib),
+          steps=[('numerical_imputer',
+                  TransformerWrapper(include=['age', 'bmi', 'children'],
+                                     transformer=SimpleImputer())),
+                 ('categorical_imputer',
+                  TransformerWrapper(include=['sex', 'smoker', 'region'],
+                                     transformer=SimpleImputer(strategy='most_frequent'))),
+                 ('ordinal_encoding',
+                  TransformerWrapper(include=['sex', 'smoker...
+                 ('polynomial_features',
+                  TransformerWrapper(transformer=PolynomialFeatures(include_bias=False))),
+                 ('bin_numeric_features',
+                  TransformerWrapper(include=['age', 'bmi'],
+                                     transformer=KBinsDiscretizer(encode='ordinal',
+                                                                  strategy='kmeans'))),
+                 ('normalize', TransformerWrapper(transformer=StandardScaler())),
+                 ('actual_estimator',
+                  GradientBoostingRegressor(random_state=123))]),
+ 'insurance_model.pkl')
+[ ]
+
